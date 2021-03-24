@@ -42,6 +42,9 @@ use JakubTheDeveloper\MusicalScales\MusicalScales;
 
 $musicalScales = MusicalScales::getInstance();
 
+$musicalScales->getSteps("Chromatic Bebop", "E");
+// Result: ['E', 'F', 'F#', 'G#', 'A', 'B', 'C#', 'D', 'D#'] 
+
 $musicalScales->getSteps("Dominant Pentatonic", "C"); 
 // Result: ['C', 'D', 'E', 'G', 'A#']
 
