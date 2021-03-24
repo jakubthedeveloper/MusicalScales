@@ -1,0 +1,16 @@
+{
+    "name": "jakub-the-developer/musical-scales",
+    "description": "Musical Scales finder",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {"JakubTheDeveloper\\MusicalScales\\": "src/"}
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
