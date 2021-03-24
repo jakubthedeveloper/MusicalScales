@@ -75,6 +75,10 @@ $musicalScales->getNotes('Ionian, Major', 'G');
 
 Search method `findScales()` always work for both H and B.
 
+## Mistakes
+
+If you have found any mistake, please report it to me.
+
 ## Buy me a coffee
 Do you appreciate my work?
 [Buy me a coffee](https://buymeacoff.ee/JakubDeveloper)
