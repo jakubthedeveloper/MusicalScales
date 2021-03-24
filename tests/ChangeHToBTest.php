@@ -15,15 +15,15 @@ final class ChangeHToBTest extends TestCase
 
     public function testChangeHToB(): void
     {
-        $searchResults = $this->musicalScales->getSteps('Ionian, Major', 'G');
+        $searchResults = $this->musicalScales->getNotes('Ionian, Major', 'G');
         $this->assertEquals(['G', 'A', 'B', 'C', 'D' ,'E', 'F#'], $searchResults);
 
         $this->musicalScales->useHInsteadOfB();
-        $searchResults = $this->musicalScales->getSteps('Ionian, Major', 'G');
+        $searchResults = $this->musicalScales->getNotes('Ionian, Major', 'G');
         $this->assertEquals(['G', 'A', 'H', 'C', 'D' ,'E', 'F#'], $searchResults);
 
         $this->musicalScales->useHInsteadOfB(false);
-        $searchResults = $this->musicalScales->getSteps('Ionian, Major', 'G');
+        $searchResults = $this->musicalScales->getNotes('Ionian, Major', 'G');
         $this->assertEquals(['G', 'A', 'B', 'C', 'D' ,'E', 'F#'], $searchResults);
     }
 }

@@ -42,13 +42,13 @@ use JakubTheDeveloper\MusicalScales\MusicalScales;
 
 $musicalScales = MusicalScales::getInstance();
 
-$musicalScales->getSteps("Chromatic Bebop", "E");
+$musicalScales->getNotes("Chromatic Bebop", "E");
 // Result: ['E', 'F', 'F#', 'G#', 'A', 'B', 'C#', 'D', 'D#'] 
 
-$musicalScales->getSteps("Dominant Pentatonic", "C"); 
+$musicalScales->getNotes("Dominant Pentatonic", "C"); 
 // Result: ['C', 'D', 'E', 'G', 'A#']
 
-$musicalScales->getSteps("Lydian Diminished", "A#"); 
+$musicalScales->getNotes("Lydian Diminished", "A#"); 
 // Result: ['A#', 'C', 'C#', 'E', 'F', 'G', 'A']
 ```
 
@@ -61,15 +61,15 @@ use JakubTheDeveloper\MusicalScales\MusicalScales;
 
 $musicalScales = MusicalScales::getInstance();
 
-$musicalScales->getSteps('Ionian, Major', 'G');
+$musicalScales->getNotes('Ionian, Major', 'G');
 // Result: ['G', 'A', 'B', 'C', 'D' ,'E', 'F#']
 
 $musicalScales->useHInsteadOfB();
-$musicalScales->getSteps('Ionian, Major', 'G');
+$musicalScales->getNotes('Ionian, Major', 'G');
 // Result: ['G', 'A', 'H', 'C', 'D' ,'E', 'F#']
 
 $musicalScales->useHInsteadOfB(false);
-$musicalScales->getSteps('Ionian, Major', 'G');
+$musicalScales->getNotes('Ionian, Major', 'G');
 // Result: ['G', 'A', 'B', 'C', 'D' ,'E', 'F#']
 ```
 

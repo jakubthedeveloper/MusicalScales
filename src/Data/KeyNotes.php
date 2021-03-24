@@ -2,9 +2,9 @@
 
 namespace JakubTheDeveloper\MusicalScales\Data;
 
-class KeySteps
+class KeyNotes
 {
-    public const KEY_STEPS = [
+    public const NOTES = [
         'C' =>  ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
         'C#' => ['C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C'],
         'D' =>  ['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#'],

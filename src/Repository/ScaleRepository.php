@@ -2,7 +2,7 @@
 
 namespace JakubTheDeveloper\MusicalScales\Repository;
 
-use JakubTheDeveloper\MusicalScales\Data\KeySteps;
+use JakubTheDeveloper\MusicalScales\Data\KeyNotes;
 use JakubTheDeveloper\MusicalScales\Data\Scales;
 
 class ScaleRepository
@@ -14,13 +14,14 @@ class ScaleRepository
         }));
     }
 
-    public function getSteps(string $scaleName, string $key, bool $useHInstedOfB = false): array
+    public function getNotes(string $scaleName, string $key, bool $useHInstedOfB = false): array
     {
+        // TODO: refactor
         if (array_key_exists($scaleName, Scales::SCALES) === false) {
             throw new \Exception("Scale not found"); // TODO: exception class + test
         }
 
-        if (array_key_exists($key, KeySteps::KEY_STEPS) === false) {
+        if (array_key_exists($key, KeyNotes::NOTES) === false) {
             throw new \Exception("Invalid key"); // TODO: exception class + test
         }
 
@@ -28,7 +29,7 @@ class ScaleRepository
 
         foreach (str_split(Scales::SCALES[$scaleName]) as $step => $value) {
             if ((int)$value === 1) {
-                $note = KeySteps::KEY_STEPS[$key][$step];
+                $note = KeyNotes::NOTES[$key][$step];
 
                 if ($useHInstedOfB === true && $note === 'B') {
                     $note = 'H';

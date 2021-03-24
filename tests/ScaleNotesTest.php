@@ -4,7 +4,7 @@ declare(strict_types=1);
 use JakubTheDeveloper\MusicalScales\MusicalScales;
 use PHPUnit\Framework\TestCase;
 
-final class ScaleStepsTest extends TestCase
+final class ScaleNotesTest extends TestCase
 {
     private MusicalScales $musicalScales;
 
@@ -14,16 +14,16 @@ final class ScaleStepsTest extends TestCase
     }
 
     /**
-     * @dataProvider stepsData
+     * @dataProvider notesData
      */
-    public function testGetSteps(string $scaleName, string $key, array $expectedSteps): void
+    public function testGetNotes(string $scaleName, string $key, array $expectedSteps): void
     {
-        $resultSteps = $this->musicalScales->getSteps($scaleName, $key);
+        $resultSteps = $this->musicalScales->getNotes($scaleName, $key);
 
         $this->assertEquals($expectedSteps, $resultSteps);
     }
 
-    public function stepsData(): array
+    public function notesData(): array
     {
         return [
             [

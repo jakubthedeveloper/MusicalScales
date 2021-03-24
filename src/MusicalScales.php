@@ -30,9 +30,9 @@ class MusicalScales
         return $this->scaleRepository->findScales($searchString);
     }
 
-    public function getSteps(string $scaleName, string $key): array
+    public function getNotes(string $scaleName, string $key): array
     {
-        return $this->scaleRepository->getSteps($scaleName, $key, $this->useHInsteadOfB);
+        return $this->scaleRepository->getNotes($scaleName, $key, $this->useHInsteadOfB);
     }
 
     public function useHInsteadOfB(bool $value = true): void
