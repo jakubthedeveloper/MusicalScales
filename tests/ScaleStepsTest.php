@@ -10,7 +10,7 @@ final class ScaleStepsTest extends TestCase
 
     public function setUp(): void
     {
-        $this->musicalScales = new MusicalScales;
+        $this->musicalScales = MusicalScales::getInstance();
     }
 
     /**
@@ -18,8 +18,6 @@ final class ScaleStepsTest extends TestCase
      */
     public function testGetSteps(string $scaleName, string $key, array $expectedSteps): void
     {
-        // TODO: option to change B to H
-
         $resultSteps = $this->musicalScales->getSteps($scaleName, $key);
 
         $this->assertEquals($expectedSteps, $resultSteps);
@@ -42,8 +40,12 @@ final class ScaleStepsTest extends TestCase
                 'Leading Whole-Tone',
                 'G',
                 ['G', 'A', 'B', 'C#', 'D#', 'F', 'F#']
+            ],
+            [
+                'Chromatic Bebop',
+                'E',
+                ['E', 'F', 'F#', 'G#', 'A', 'B', 'C#', 'D', 'D#']
             ]
-            // TODO: more tests cases
         ];
     }
 }

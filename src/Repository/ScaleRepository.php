@@ -14,7 +14,7 @@ class ScaleRepository
         }));
     }
 
-    public function getSteps(string $scaleName, string $key = 'C'): array
+    public function getSteps(string $scaleName, string $key, bool $useHInstedOfB = false): array
     {
         if (array_key_exists($scaleName, Scales::SCALES) === false) {
             throw new \Exception("Scale not found"); // TODO: exception class + test
@@ -28,7 +28,13 @@ class ScaleRepository
 
         foreach (str_split(Scales::SCALES[$scaleName]) as $step => $value) {
             if ((int)$value === 1) {
-                $result[] = KeySteps::KEY_STEPS[$key][$step];
+                $note = KeySteps::KEY_STEPS[$key][$step];
+
+                if ($useHInstedOfB === true && $note === 'B') {
+                    $note = 'H';
+                }
+
+                $result[] = $note;
             }
         }
 

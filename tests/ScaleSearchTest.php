@@ -10,7 +10,7 @@ final class ScaleSearchTest extends TestCase
 
     public function setUp(): void
     {
-        $this->musicalScales = new MusicalScales;
+        $this->musicalScales = MusicalScales::getInstance();
     }
 
     /**
@@ -49,8 +49,23 @@ final class ScaleSearchTest extends TestCase
                     "Super Locrian all sharps",
                     "Ultra Locrian"
                 ]
+            ],
+
+            [
+                "Bebop",
+                [
+                    "Chromatic Bebop",
+                    "Dominant Bebop",
+                    "Half-Diminished Bebop",
+                    "Major Bebop",
+                    "Major Bebop Heptatonic Mela Mararanjani (India)",
+                    "Major Bebop Hexatonic",
+                    "Minor Bebop (As Minor Bebop 11/891011/3 in 12edo)",
+                    "Minor Bebop (all b’s) 11/2891011/3 in 12edo)",
+                    "Minor Bebop (as 7/0/4 in 12 edo)",
+                    "Minor Bebop Heptatonic (as 7/3/4 in 12edo)"
+                ]
             ]
-            //TODO: more test cases
         ];
     }
 }
