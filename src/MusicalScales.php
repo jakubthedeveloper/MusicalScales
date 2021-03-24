@@ -32,6 +32,10 @@ class MusicalScales
 
     public function getNotes(string $scaleName, string $key): array
     {
+        if ($key === 'H') {
+            $key = 'B';
+        }
+
         return $this->scaleRepository->getNotes($scaleName, $key, $this->useHInsteadOfB);
     }
 

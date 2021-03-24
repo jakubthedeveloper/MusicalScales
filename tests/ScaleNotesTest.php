@@ -45,6 +45,16 @@ final class ScaleNotesTest extends TestCase
                 'Chromatic Bebop',
                 'E',
                 ['E', 'F', 'F#', 'G#', 'A', 'B', 'C#', 'D', 'D#']
+            ],
+            [
+                'Chromatic Dorian',
+                'A#',
+                ['A#', 'B', 'C', 'D#', 'F', 'F#', 'G']
+            ],
+            [
+                'Diminished Chord',
+                'H',
+                ['B', 'D', 'F']
             ]
         ];
     }

@@ -4,6 +4,8 @@ namespace JakubTheDeveloper\MusicalScales\Repository;
 
 use JakubTheDeveloper\MusicalScales\Data\KeyNotes;
 use JakubTheDeveloper\MusicalScales\Data\Scales;
+use JakubTheDeveloper\MusicalScales\Exception\InvalidKeyException;
+use JakubTheDeveloper\MusicalScales\Exception\ScaleNotFoundException;
 
 class ScaleRepository
 {
@@ -16,14 +18,8 @@ class ScaleRepository
 
     public function getNotes(string $scaleName, string $key, bool $useHInstedOfB = false): array
     {
-        // TODO: refactor
-        if (array_key_exists($scaleName, Scales::SCALES) === false) {
-            throw new \Exception("Scale not found"); // TODO: exception class + test
-        }
-
-        if (array_key_exists($key, KeyNotes::NOTES) === false) {
-            throw new \Exception("Invalid key"); // TODO: exception class + test
-        }
+        $this->validateScale($scaleName);
+        $this->validateKey($key);
 
         $result = [];
 
@@ -40,5 +36,19 @@ class ScaleRepository
         }
 
         return $result;
+    }
+
+    private function validateScale(string $scaleName): void
+    {
+        if (array_key_exists($scaleName, Scales::SCALES) === false) {
+            throw new ScaleNotFoundException($scaleName);
+        }
+    }
+
+    private function validateKey(string $key): void
+    {
+        if (array_key_exists($key, KeyNotes::NOTES) === false) {
+            throw new InvalidKeyException($key);
+        }
     }
 }
