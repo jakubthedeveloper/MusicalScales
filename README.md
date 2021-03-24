@@ -1,6 +1,6 @@
 # Musical Scales
 
-🎶 PHP / Composer library to find notes of various musical scales in any key.
+🎼 PHP / Composer library to find notes of various musical scales in any key.
 
 [![Build Status](https://travis-ci.org/jakubthedeveloper/MusicalScales.svg?branch=master)](https://travis-ci.org/jakubthedeveloper/MusicalScales)
 
